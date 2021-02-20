@@ -9,4 +9,3 @@ dependencies:
   - dill
   - pandas
   - plotly
-  - jupytemplate
