@@ -8,6 +8,4 @@ dependencies:
   - matplotlib
   - dill
   - pandas
-  - partd
-  - bokeh
-  - dask
+  - plotly
