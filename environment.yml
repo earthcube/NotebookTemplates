@@ -4,7 +4,6 @@ channels:
   - trentonoliphant
 dependencies:
   - python
-  - ipyparams
   - numpy
   - psutil
   - toolz
@@ -28,4 +27,8 @@ dependencies:
   - holoviews
   - papermill
   - SPARQLWrapper
-  -  pathlib
+  - pathlib
+  - pip
+  - pip:
+    - nbgitpuller
+    - ipyparams
