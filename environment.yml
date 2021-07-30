@@ -4,6 +4,7 @@ channels:
   - trentonoliphant
 dependencies:
   - python
+  - ipyparams
   - numpy
   - psutil
   - toolz
