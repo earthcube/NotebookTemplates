@@ -1,0 +1,12 @@
+{
+    "title": "Interactive Jupyter notebook for hydrographic ocean data exploration, retrieval and visualization via the Argovis API",
+    "creators": [
+             {"name": "Susanna Anil", "affiliation": "University of California San Diego"},
+    {"name": "Steve Diggs", "affiliation": "Scripps Institution of Oceanography, University of California San Diego",  "orcid": "0000-0003-3814-6104"},
+    {"name": "Sarah Purkey", "affiliation": "CASPO, Scripps Institution of Oceanography, La Jolla, CA, United States.",   "orcid": "0000-0002-1893-6224"},
+    {"name": "Donata Giglio", "affiliation": "Department of Atmospheric and Oceanic Sciences, University of Colorado Boulder, Boulder, CO, United States",   "orcid": "0000-0002-3738-4293"},
+    {"name": "Megan Scanderbeg", "affiliation": "CASPO, Scripps Institution of Oceanography, La Jolla, CA, United States.",   "orcid": "0000-0002-0398-7272"},
+    {"name": "Tyler Tucker", "affiliation": "Department of Atmospheric and Oceanic Sciences, University of Colorado Boulder, Boulder, CO, United States",   "orcid": "0000-0002-0560-9777"}
+    ],
+    "keywords": ["Argovis", "hydrographic data", "profiling floats", "exploring ocean data", "in-situ ocean observations"]
+}
