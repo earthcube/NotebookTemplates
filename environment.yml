@@ -9,4 +9,4 @@ dependencies:
   - dill
   - pandas
   - plotly
-  - sklearn
+  - scikit-learn
