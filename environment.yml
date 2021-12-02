@@ -1,12 +1,23 @@
-name: example-environment
+name: earthcube-jupyter-environment
 channels:
   - conda-forge
+  - trentonoliphant
 dependencies:
-  - numpy
+  - python
   - psutil
-  - toolz
-  - matplotlib
   - dill
   - pandas
   - plotly
   - scikit-learn
+  - partd
+  - ipywidgets
+  - lxml
+  - requests
+  - papermill
+  - SPARQLWrapper
+  - pathlib
+  - pip:
+    - nbgitpuller
+    - ipyparams
+    - httpimport
+

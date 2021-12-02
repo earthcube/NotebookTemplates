@@ -1,0 +1,12 @@
+name: ecbinder
+channels:
+  - defaults
+dependencies:
+  - jupyter
+  - python=3.7
+  - pandas
+  - ipykernel
+  - notebook=5.7.4
+  - cartopy
+  - requests
+prefix: /Users/susannaanil/opt/anaconda3/envs/ecbinder

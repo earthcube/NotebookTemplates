@@ -8,4 +8,4 @@ Any of these template versions can be installed in your Jupyter environment usin
 If you develop in languages other than Python, or use specialized environments to run your notebooks, please follow the rubrics and customize as needed.
 
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/earthcube/NotebookTemplates/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/earthcube/NotebookTemplates.git/geocodes_template)
