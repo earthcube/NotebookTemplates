@@ -7,6 +7,8 @@ dependencies:
   - psutil
   - dill
   - pandas
+  - plotly
+  - scikit-learn
   - partd
   - ipywidgets
   - lxml
@@ -14,8 +16,8 @@ dependencies:
   - papermill
   - SPARQLWrapper
   - pathlib
-  - pip
   - pip:
     - nbgitpuller
     - ipyparams
     - httpimport
+
