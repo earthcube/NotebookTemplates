@@ -1,0 +1,157 @@
+---
+title: Template RMarkdown for EarthCube - Long Version
+date: "2022/10/23"
+keywords: 
+  - a comma separated list of keywords
+author:
+    # Using schema.org/Person
+    - name: MyName
+      email: authorone@example.com
+      affiliation: "Institute One"
+      correspondence: false
+      url: http://example.com/personone
+    - name: MyName
+      email: authortwo@example.com
+      affiliation: "Institute One; Insitute Two"
+      correspondence: true
+      url: http://example.com/persontwo
+institute:
+    # Using schema.org/Organization
+    - name: Institute One
+      address: 5555 Example St
+      city: City
+      region: Province
+      country: Country
+    - name: Institute Two
+      address: 4444 Demonstration Ave
+      city: town
+      region: State
+      country: Country
+awards:
+    # Using schema.org/Grant
+    - ShortAwardName:
+        sponsor: Example.com Award Foundation
+        identifier: 25002020
+        name: Collaborative Award to something or other.
+        url: https://example.com/awards/25002020
+    - NextShortAwardName:
+        sponsor: Example.com Award Foundation
+        identifier: 25002021
+        name: Collaborative Award to something or other.
+        url: https://example.com/awards/25002021
+abstract: |
+  You can type your abstract here.
+# bibliography: "yourbibtex.bib"
+output:
+  html_document:
+    number_sections: yes
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# Please use the `pacman` package to load your packages:
+# pacman::p_load("your","required","libraries")
+# pacman::p_load_gh("packages", "from", "github")
+```
+
+# Purpose
+
+This notebook presents a template and outlines best practices for documenting and formatting Jupyter notebooks and related resources for submission to EarthCube repository. This notebook is developed for RMarkdown, and expects a standard R environment for execution.  
+
+If you choose to use references in your document, use an associated `BibTex` file, and ensure that it is included in your repository and the YAML header information.  You reference in-text in the following manner:
+
+```markdown
+Here is my text and what I am referencing {@bibtex2008}.
+```
+
+and your BibTex file will have an associated entry:
+
+```bibtex
+@article{bibtex2008,
+  title={The name of the article},
+  author={Lastname, Firstname},
+  journal={Journal of Names},
+  . . .
+}
+```
+
+The RMarkdown file should render successfully using the commandline argument `Rscript -e 'rmarkdown::render("yourfile.Rmd")'`.  If it uses some other method for rendering, please ensure that the reviewers are aware of this.
+
+# Technical contributions
+
+Summarize the central contributions of the notebook (libraries created, scientific analysis demonstrated, etc.), as a bulleted list, with one or more bullets.
+
+Examples:
+
+* demonstration of scientific analysis leveraging existing API (explain)
+* development of underlying API that is exposed in the notebook (state which components are developed by the author, and point to documentation)
+* developmnent of local libraries imported in the notebook (they should be subbmitted along with the notebook and documented in the same way)
+
+# Methodology
+
+Quickly describe assumptions and processing steps. Include URLs as necessary.
+
+Most cells in this notebook are markdown cells. They describe the expected content of the notebook, steps for formatting and sumitting notebooks, and relevant technologies. The proposed structure and procedures are based on community input and literature (see References).
+
+You can use this template as a visual guide, or configure your Jupyter installation such that every notebook opens with this template, in either short of long version. To enable opening notebooks with this template, see instructions for using the Template nbextension, in the Data Processing section.
+
+Markdown headings are automatically numbered and organized into a Table of Contents (ToC) using a table of contents, implemented in the `yaml` header:
+
+```yaml
+toc: true
+```
+
+# Results
+
+Describe and comment on the most important results. Include images and URLs as necessary.
+
+This template presents the general structure of notebooks expected by EarthCube, along with recommendations for additional resources to be created to ensure that the notebook is easy to re-use.
+
+# Funding
+
+Include references to awards that supported this research. Add as many award references as you need, using the YAML template included at the head of this document.
+
+# Keywords
+
+Include up to 5 keywords, within the YAML header above, using the format:
+
+```yaml
+keywords:
+    - template
+    - EarthCube
+    - some subject
+    - science
+    - cool stuff
+```
+
+# Citation
+
+Include the recommended citation for the document.  You may choose to use Zenodo, or another service (such as figShare or your University services) to obtain a DOI for your code repository.  If you are using GitHub, consider adding a [GitHub Citation file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files).  Ensure that the title in the suggested citation, and the authors match those in your YAML header.
+
+For example:
+
+* EarthCube Office, 2021. EarthCube Notebook Template. Accessed 2/1/2021 at https://github.com/earthcube/NotebookTemplates
+
+# Work In Progress - improvements
+
+Use this section only if the notebook is not final.  Describe general ideas here using prose.
+
+## Notable TODOs
+
+Identify specific tasks here as bullets.
+
+* todo 1
+* todo 2
+* todo 3
+
+# Suggested next steps
+
+State suggested next steps, based on results obtained in this notebook. This section is optional.
+
+# Acknowledgements
+
+Include any relevant acknowledgements, apart from funding (which was in section 1.6).
+This notebook template extends the original notebook template provided with the jupytemplate extension [5]. It is a result of collaboration between the TAC Working Group and the EarthCube Office.
+
+The template is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
