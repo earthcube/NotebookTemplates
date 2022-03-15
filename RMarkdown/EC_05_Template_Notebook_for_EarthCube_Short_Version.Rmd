@@ -1,0 +1,159 @@
+---
+title: "Template RMarkdown for EarthCube - Short Version"
+author:
+- name: MyName
+  email: authorone@example.com
+  affiliation: Institute One
+  correspondence: no
+  url: http://example.com/personone
+- name: MyName
+  email: authortwo@example.com
+  affiliation: Institute One; Insitute Two
+  correspondence: yes
+  url: http://example.com/persontwo
+date: "2022/10/23"
+output:
+  html_document:
+    number_sections: yes
+    toc: yes
+  pdf_document:
+    toc: yes
+institute:
+- name: Institute One
+  address: 5555 Example St
+  city: City
+  region: Province
+  country: Country
+- name: Institute Two
+  address: 4444 Demonstration Ave
+  city: town
+  region: State
+  country: Country
+awards:
+- ShortAwardName:
+    sponsor: Example.com Award Foundation
+    identifier: 25002020
+    name: Collaborative Award to something or other.
+    url: https://example.com/awards/25002020
+- NextShortAwardName:
+    sponsor: Example.com Award Foundation
+    identifier: 25002021
+    name: Collaborative Award to something or other.
+    url: https://example.com/awards/25002021
+
+bibliography: yourbibtex.bib
+keywords:
+- bullet
+- points
+- for
+- each
+- keyword
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# Please use the `pacman` package to load your packages:
+# install.packages("pacman")
+# pacman::p_load("your","required","libraries")
+# pacman::p_load_gh("packages", "from", "github")
+```
+
+# Purpose
+State the purpose of the notebook.
+
+
+
+
+# Technical contributions
+
+Summarize the central contributions of the notebook (libraries created, scientific analysis demonstrated, etc.), as a bullet list, with one or more bullets.
+
+
+# Methodology
+
+Quickly describe assumptions and processing steps. Include URLs as necessary.
+
+
+
+# Results
+
+Describe and comment on the most important results. Include images and URLs as necessary.
+
+
+
+# Funding
+
+Include references to awards that supported this research. 
+
+
+# Keywords
+
+Include up to 5 keywords, within the YAML header above.
+
+# Citation
+
+Include the recommended citation for the document.  
+
+# Work In Progress - improvements
+
+Use this section only if the notebook is not final.  
+
+## Notable TODOs
+
+Identify specific tasks here as bullets.
+
+* todo 1
+* todo 2
+* todo 3
+
+# Suggested next steps
+
+State suggested next steps, based on results obtained in this notebook. This section is optional.
+
+# Acknowledgements
+
+Include any relevant acknowledgements, apart from funding (which was in section 5).
+
+
+# Setup
+
+You will need to download the Rmd, HTML and bibtex file from the earthcube repository, store it in a single directory and then set up a project. 
+
+## Packages 
+Install all the required packages in the r setup section at the head of this document. 
+
+The code  below is an example.  
+
+
+```{r}
+library(jsonlite)
+library(ggplot2)
+
+x <- "hello"
+y <- toJSON(x)
+df <- data.frame(Country=c("ie","us","za"),Nodes=c(10,20,15))
+```
+
+## Local library import
+Create a file with the source code of local packages inside the project to make sure that the folder can be reproducible in other machines and run a source command.
+
+## Parameter definitions
+Set all relevant parameters for the notebook. By convention, parameters are uppercase, while all the other variables follow R guidelines.
+
+## Data import
+Retrieve all the required data for the analysis. Include brief data descriptions, and DOIs where possible.
+
+
+
+## Data processing and analysis
+The core of the notebook is here. Split this section into subsections as required, and explain processing and analysis steps.
+
+```{r} 
+# YOUR WORK HERE!
+```
+
+Selected best practices for organizing and formatting your notebooks are included below.
+
+
+
+# References

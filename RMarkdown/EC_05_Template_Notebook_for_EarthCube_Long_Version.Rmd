@@ -1,65 +1,65 @@
 ---
-title: Template RMarkdown for EarthCube - Long Version
-date: "2022/10/23"
-keywords: 
-  - bullet
-  - points
-  - for
-  - each
-  - keyword
+title: "Template RMarkdown for EarthCube - Long Version"
 author:
-    # Using schema.org/Person
-    - name: MyName
-      email: authorone@example.com
-      affiliation: "Institute One"
-      correspondence: false
-      url: http://example.com/personone
-    - name: MyName
-      email: authortwo@example.com
-      affiliation: "Institute One; Insitute Two"
-      correspondence: true
-      url: http://example.com/persontwo
-institute:
-    # Using schema.org/Organization
-    - name: Institute One
-      address: 5555 Example St
-      city: City
-      region: Province
-      country: Country
-    - name: Institute Two
-      address: 4444 Demonstration Ave
-      city: town
-      region: State
-      country: Country
-awards:
-    # Using schema.org/Grant
-    - ShortAwardName:
-        sponsor: Example.com Award Foundation
-        identifier: 25002020
-        name: Collaborative Award to something or other.
-        url: https://example.com/awards/25002020
-    - NextShortAwardName:
-        sponsor: Example.com Award Foundation
-        identifier: 25002021
-        name: Collaborative Award to something or other.
-        url: https://example.com/awards/25002021
-abstract: |
-  *You can type your abstract here. It can be as long or as short as you like, but it's helpful to include something reasonable.  You can write using markdown formatting here, since it will be rendered as markdown.*
-bibliography: "yourbibtex.bib"
+- name: MyName
+  email: authorone@example.com
+  affiliation: Institute One
+  correspondence: no
+  url: http://example.com/personone
+- name: MyName
+  email: authortwo@example.com
+  affiliation: Institute One; Insitute Two
+  correspondence: yes
+  url: http://example.com/persontwo
+date: "2022/10/23"
 output:
   html_document:
     number_sections: yes
-    toc: true
+    toc: yes
+  pdf_document:
+    toc: yes
+institute:
+- name: Institute One
+  address: 5555 Example St
+  city: City
+  region: Province
+  country: Country
+- name: Institute Two
+  address: 4444 Demonstration Ave
+  city: town
+  region: State
+  country: Country
+awards:
+- ShortAwardName:
+    sponsor: Example.com Award Foundation
+    identifier: 25002020
+    name: Collaborative Award to something or other.
+    url: https://example.com/awards/25002020
+- NextShortAwardName:
+    sponsor: Example.com Award Foundation
+    identifier: 25002021
+    name: Collaborative Award to something or other.
+    url: https://example.com/awards/25002021
+
+bibliography: yourbibtex.bib
+keywords:
+- bullet
+- points
+- for
+- each
+- keyword
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 # Please use the `pacman` package to load your packages:
+# install.packages("pacman")
 # pacman::p_load("your","required","libraries")
 # pacman::p_load_gh("packages", "from", "github")
 ```
 
 # Purpose
+State the purpose of the notebook.
 
 This notebook presents a template and outlines best practices for documenting and formatting Jupyter notebooks and related resources for submission to EarthCube repository. This notebook is developed for RMarkdown, and expects a standard R environment for execution.  
 
@@ -97,8 +97,7 @@ Examples:
 Quickly describe assumptions and processing steps. Include URLs as necessary.
 
 Most cells in this notebook are markdown cells. They describe the expected content of the notebook, steps for formatting and sumitting notebooks, and relevant technologies. The proposed structure and procedures are based on community input and literature (see References).
-
-You can use this template as a visual guide, or configure your Jupyter installation such that every notebook opens with this template, in either short of long version. To enable opening notebooks with this template, see instructions for using the Template nbextension, in the Data Processing section.
+.
 
 Markdown headings are automatically numbered and organized into a Table of Contents (ToC) using a table of contents, implemented in the `yaml` header:
 
@@ -115,6 +114,7 @@ This template presents the general structure of notebooks expected by EarthCube,
 # Funding
 
 Include references to awards that supported this research. Add as many award references as you need, using the YAML template included at the head of this document.
+
 
 # Keywords
 
@@ -155,7 +155,101 @@ State suggested next steps, based on results obtained in this notebook. This sec
 
 # Acknowledgements
 
-Include any relevant acknowledgements, apart from funding (which was in section 1.6).
-This notebook template extends the original notebook template provided with the jupytemplate extension [5]. It is a result of collaboration between the TAC Working Group and the EarthCube Office.
+Include any relevant acknowledgements, apart from funding (which was in section 5).
+
 
 The template is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+
+# Setup
+
+You will need to download the Rmd, HTML and bibtex file from the earthcube repository, store it in a single directory and then set up a project (see [this link](https://swcarpentry.github.io/r-novice-gapminder/02-project-intro/) for further discussion of this.)
+
+## Packages 
+Install all the required packages in the r setup section at the head of this document. As noted previously, use pacman to do the installation.
+
+The code  below is an example.  
+It is a good practice to organize the imported packages by functionality.
+
+```{r}
+library(jsonlite)
+library(ggplot2)
+
+x <- "hello"
+y <- toJSON(x)
+df <- data.frame(Country=c("ie","us","za"),Nodes=c(10,20,15))
+ggplot(data=df,aes(x=Country,y=Nodes)) +
+   geom_bar(stat="identity")
+```
+
+## Local library import
+Create a file with the source code of local packages inside the project to make sure that the folder can be reproducible in other machines and run a source command.
+
+## Parameter definitions
+Set all relevant parameters for the notebook. By convention, parameters are uppercase, while all the other variables follow R guidelines.
+
+## Data import
+Retrieve all the required data for the analysis. Include brief data descriptions, and DOIs where possible.
+
+Please import data in one of two ways:
+1. Reference data that is available online and continuously managed (preferred). 
+2. If the data is relatively small, please include the files along with the notebook (in the same directory). If you deal with large data, include a subset.
+
+## Data processing and analysis
+The core of the notebook is here. Split this section into subsections as required, and explain processing and analysis steps.
+
+```{r} 
+# YOUR WORK HERE!
+```
+
+Selected best practices for organizing and formatting your notebooks are included below.
+
+## The 10 rules
+These recommendations are based on (@rule_ten_2019):
+
+1. Tell a story for an audience: interleave explanatory text with code and results to create a computational narrative.
+
+2. Document the process, not just the results: so that others, and yourself later, will understand your reasoning and choices.
+
+3. Use cell divisions to make steps clear: have each piece of R perform one meaningful and documented step, avoid long pieces of R.
+
+4. Modularize code: use and document functions for repeated operations to make the code more readable and save space.
+
+5. Record dependencies: use (for example) Conda package manager, with environment.yml (Conda). Please indicate package versions explicitly. Ideally, include a listing of dependencies at the bottom of the notebook. Make sure you test your notebook in an environment created from these dependencies, so that you don't add undocumented dependencies (we discuss this more in using Binder.
+
+6. Use version control such as git.
+
+7. Build a pipeline: place key variable declarations at the top. Test with different parameters, clean up, and run all R code  to prepare for potential non-interactive execution.
+
+8. Share and explain your data: if the original data are too big, include a sample. Make sure that the data is accessible. Include data description, and any processing done beforehand. Ideally, point to datasets that have been permanently managed and identified by DOIs.
+
+9. Design your notebooks to be read, run, and explored:  
+    9.1. Read: store it in a public code repository with a clear README file and a liberal open source license. Generate HTML/PDF versions of the final notebook.  
+    9.2. Run: use Binder to run it in the cloud.  
+    9.3. Explore: use interactive widgets (e.g., Shiny) 
+    
+10. Advocate for open research: ask your colleagues or friends to try to run your notebooks.
+
+## Creating Binder for your notebook repository
+
+Sharing just the markdown file is not sufficient for broad re-usability. We strongly recommend that Rmarkdown notebooks are submitted to EarthCube in Binders. The Binder service is a free service that allows anyone to run notebooks from their web browser without installing any software and resolving dependencies.
+
+Follow these steps:
+
+Assemble the R markdown, additional source files, datasets, and a README, in a single project directory (and sub-directories off of it, as needed). In the same project directory create a separate R script called install.R with the commands to install all the relevant external packages and a file runtime.txt with the version of R you want to use. This latter file should have a one line entry of the form 
+
+```markdown
+r-<r-version>-<YYYY>-<MM>-<DD>
+```
+
+(you can find out the version you are running using the R.version command).
+Use GitHub to organize your project as a GitHub repository.
+Create Binder. Use http://mybinder.org to create a URL for your notebook Binder (you will need to enter your GitHub repo URL). You can also add a Launch Binder button directly to your GitHub repo, by including the following in your README.md:
+launch with myBinder
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/<path to your repo>)
+Specific projects may have their own Binder implementations. In this case, include a project-specific Binder reference so that reviewers can execute your code.
+
+An example implementation of R on binder can be found [here](https://github.com/binder-examples/r).
+
+Expect the reviewers to use a browser of their choice to run your code, and try to avoid special execution requirements that make it difficult for users to appreciate your work.
+
+# References
