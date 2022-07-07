@@ -16,6 +16,7 @@ dependencies:
   - papermill
   - SPARQLWrapper
   - pathlib
+  - minio
   - pip:
     - nbgitpuller
     - ipyparams
